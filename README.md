@@ -1,0 +1,2 @@
+# yastyleguide
+Yet another styleguide
