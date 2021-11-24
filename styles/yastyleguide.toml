@@ -1,0 +1,20 @@
+# Nitpick settings yastyleguide
+
+["setup.cfg".flake8]
+# Basic settings for flake8
+count = true
+show-source = true
+statistics = true
+ignore = "D100,D104,W503"
+
+# Line settings
+max-line-length = 88
+
+# Quotes settings
+inline-quotes = '"'
+
+# Complexisty settings
+max-complexity = 5
+
+# Docstrings conv
+docstring-convention = 'google'

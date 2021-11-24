@@ -2,4 +2,8 @@ from yastyleguide import __version__
 
 
 def test_version():
-    assert __version__ == '0.1.0'
+    """Test package version. Test from template.
+
+    It checks `__version__` number.
+    """
+    assert __version__ == "0.0.1"
