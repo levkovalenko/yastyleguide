@@ -15,6 +15,9 @@ inline-quotes = '"'
 
 # Complexisty settings
 max-complexity = 5
+max-expression-complexity = 9
+max-annotations-complexity = 4
+max-line-complexity = 15
 
 # Docstrings conv
 docstring-convention = 'google'
