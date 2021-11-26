@@ -1,0 +1,3 @@
+# Nitpick settings for flake8
+
+["setup.cfg".flake8]
