@@ -17,9 +17,8 @@ repository = "https://github.com/levkovalenko/yastyleguide"
 keywords = [
   "flake8",
   "flake8-plugin",
-  "flake8-formatter",
   "linter",
-  "wemake.services",
+  "yastyleguide",
   "styleguide",
   "code quality",
   "pycqa"

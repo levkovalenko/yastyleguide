@@ -8,4 +8,5 @@ minimum_version = "0.22.0"
 include = [
     "flake8.toml",
     "yastyleguide.toml",
+    "isort.toml",
 ]
