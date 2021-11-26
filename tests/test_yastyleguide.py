@@ -6,4 +6,4 @@ def test_version():
 
     It checks `__version__` number.
     """
-    assert __version__ == "0.0.1"
+    assert __version__ == "0.0.2"
