@@ -61,7 +61,6 @@ black = "^21.11b1"
 pytest = "^5.2"
 black = "^21.11b1"
 mypy = "^0.910"
-hypothesis = "^6.27.1"
 nitpick = "^0.29.0"
 
 
