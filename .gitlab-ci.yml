@@ -26,9 +26,9 @@ check-linters:
   script:
     - poetry install
     - echo "Checking with Flake8"
-    - flake8 .
+    - poetry run flake8 .
     - echo "Checking with MyPy"
-    - mypy .
+    - poetry run mypy .
 
 
 tests:
@@ -40,7 +40,7 @@ tests:
   script:
     - poetry install
     - echo "Run tests"
-    - pytest .
+    - poetry run pytest .
 
 
 build-release:
