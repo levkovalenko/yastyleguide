@@ -1,3 +1,4 @@
 from typing import Any, Generator, Tuple
 
-ERROR_GENERATOR = Generator[Tuple[int, int, str, Any], None, None]
+ERROR = Tuple[int, int, str, Any]
+ERROR_GENERATOR = Generator[ERROR, None, None]

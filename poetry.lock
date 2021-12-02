@@ -103,7 +103,7 @@ python-versions = "*"
 
 [[package]]
 name = "charset-normalizer"
-version = "2.0.7"
+version = "2.0.8"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
 category = "main"
 optional = false
@@ -225,7 +225,7 @@ flake8 = ">=3.5,<5"
 
 [[package]]
 name = "flake8-bugbear"
-version = "21.9.2"
+version = "21.11.29"
 description = "A plugin for flake8 finding likely bugs and design problems in your program. Contains warnings that don't belong in pyflakes and pycodestyle."
 category = "main"
 optional = false
@@ -236,7 +236,7 @@ attrs = ">=19.2.0"
 flake8 = ">=3.0.0"
 
 [package.extras]
-dev = ["coverage", "black", "hypothesis", "hypothesmith"]
+dev = ["coverage", "hypothesis", "hypothesmith (>=0.2)", "pre-commit"]
 
 [[package]]
 name = "flake8-builtins"
@@ -330,14 +330,6 @@ testfixtures = ">=6.8.0,<7"
 test = ["pytest-cov"]
 
 [[package]]
-name = "flake8-plugin-utils"
-version = "1.3.2"
-description = "The package provides base classes and utils for flake8 plugin writing"
-category = "main"
-optional = false
-python-versions = ">=3.6,<4.0"
-
-[[package]]
 name = "flake8-polyfill"
 version = "1.0.2"
 description = "Polyfill package for Flake8 plugins"
@@ -404,34 +396,6 @@ python-versions = ">=3.7"
 [package.dependencies]
 gitdb = ">=4.0.1,<5"
 typing-extensions = {version = ">=3.7.4.3", markers = "python_version < \"3.10\""}
-
-[[package]]
-name = "hypothesis"
-version = "6.27.1"
-description = "A library for property-based testing"
-category = "dev"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-attrs = ">=19.2.0"
-sortedcontainers = ">=2.1.0,<3.0.0"
-
-[package.extras]
-all = ["black (>=19.10b0)", "click (>=7.0)", "django (>=2.2)", "dpcontracts (>=0.4)", "lark-parser (>=0.6.5)", "libcst (>=0.3.16)", "numpy (>=1.9.0)", "pandas (>=0.25)", "pytest (>=4.6)", "python-dateutil (>=1.4)", "pytz (>=2014.1)", "redis (>=3.0.0)", "rich (>=9.0.0)", "importlib-resources (>=3.3.0)", "importlib-metadata (>=3.6)", "backports.zoneinfo (>=0.2.1)", "tzdata (>=2020.4)"]
-cli = ["click (>=7.0)", "black (>=19.10b0)", "rich (>=9.0.0)"]
-codemods = ["libcst (>=0.3.16)"]
-dateutil = ["python-dateutil (>=1.4)"]
-django = ["pytz (>=2014.1)", "django (>=2.2)"]
-dpcontracts = ["dpcontracts (>=0.4)"]
-ghostwriter = ["black (>=19.10b0)"]
-lark = ["lark-parser (>=0.6.5)"]
-numpy = ["numpy (>=1.9.0)"]
-pandas = ["pandas (>=0.25)"]
-pytest = ["pytest (>=4.6)"]
-pytz = ["pytz (>=2014.1)"]
-redis = ["redis (>=3.0.0)"]
-zoneinfo = ["importlib-resources (>=3.3.0)", "backports.zoneinfo (>=0.2.1)", "tzdata (>=2020.4)"]
 
 [[package]]
 name = "identify"
@@ -957,7 +921,7 @@ python-versions = "*"
 
 [[package]]
 name = "win32-setctime"
-version = "1.0.3"
+version = "1.0.4"
 description = "A small Python utility to set file creation time on Windows"
 category = "main"
 optional = false
@@ -981,7 +945,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8 || ^3.9"
-content-hash = "2a2870d3d8411e53876a646b9065b9095106a258592a56a5480e62f88da40693"
+content-hash = "9c449ffc9e5389f8590e582539e6c83ac71cef112810f2cece7566edb1f7d736"
 
 [metadata.files]
 astpretty = [
@@ -1018,8 +982,8 @@ certifi = [
     {file = "certifi-2021.10.8.tar.gz", hash = "sha256:78884e7c1d4b00ce3cea67b44566851c4343c120abd683433ce934a68ea58872"},
 ]
 charset-normalizer = [
-    {file = "charset-normalizer-2.0.7.tar.gz", hash = "sha256:e019de665e2bcf9c2b64e2e5aa025fa991da8720daa3c1138cadd2fd1856aed0"},
-    {file = "charset_normalizer-2.0.7-py3-none-any.whl", hash = "sha256:f7af805c321bfa1ce6714c51f254e0d5bb5e5834039bc17db7ebe3a4cec9492b"},
+    {file = "charset-normalizer-2.0.8.tar.gz", hash = "sha256:735e240d9a8506778cd7a453d97e817e536bb1fc29f4f6961ce297b9c7a917b0"},
+    {file = "charset_normalizer-2.0.8-py3-none-any.whl", hash = "sha256:83fcdeb225499d6344c8f7f34684c2981270beacc32ede2e669e94f7fa544405"},
 ]
 click = [
     {file = "click-8.0.3-py3-none-any.whl", hash = "sha256:353f466495adaeb40b6b5f592f9f91cb22372351c84caeb068132442a4518ef3"},
@@ -1060,8 +1024,8 @@ flake8-broken-line = [
     {file = "flake8_broken_line-0.4.0-py3-none-any.whl", hash = "sha256:e9c522856862239a2c7ef2c1de0276fa598572aa864bd4e9c7efc2a827538515"},
 ]
 flake8-bugbear = [
-    {file = "flake8-bugbear-21.9.2.tar.gz", hash = "sha256:db9a09893a6c649a197f5350755100bb1dd84f110e60cf532fdfa07e41808ab2"},
-    {file = "flake8_bugbear-21.9.2-py36.py37.py38-none-any.whl", hash = "sha256:4f7eaa6f05b7d7ea4cbbde93f7bcdc5438e79320fa1ec420d860c181af38b769"},
+    {file = "flake8-bugbear-21.11.29.tar.gz", hash = "sha256:8b04cb2fafc6a78e1a9d873bd3988e4282f7959bb6b0d7c1ae648ec09b937a7b"},
+    {file = "flake8_bugbear-21.11.29-py36.py37.py38-none-any.whl", hash = "sha256:179e41ddae5de5e3c20d1f61736feeb234e70958fbb56ab3c28a67739c8e9a82"},
 ]
 flake8-builtins = [
     {file = "flake8-builtins-1.5.3.tar.gz", hash = "sha256:09998853b2405e98e61d2ff3027c47033adbdc17f9fe44ca58443d876eb00f3b"},
@@ -1090,10 +1054,6 @@ flake8-isort = [
     {file = "flake8-isort-4.1.1.tar.gz", hash = "sha256:d814304ab70e6e58859bc5c3e221e2e6e71c958e7005239202fee19c24f82717"},
     {file = "flake8_isort-4.1.1-py3-none-any.whl", hash = "sha256:c4e8b6dcb7be9b71a02e6e5d4196cefcef0f3447be51e82730fb336fff164949"},
 ]
-flake8-plugin-utils = [
-    {file = "flake8-plugin-utils-1.3.2.tar.gz", hash = "sha256:20fa2a8ca2decac50116edb42e6af0a1253ef639ad79941249b840531889c65a"},
-    {file = "flake8_plugin_utils-1.3.2-py3-none-any.whl", hash = "sha256:1fe43e3e9acf3a7c0f6b88f5338cad37044d2f156c43cb6b080b5f9da8a76f06"},
-]
 flake8-polyfill = [
     {file = "flake8-polyfill-1.0.2.tar.gz", hash = "sha256:e44b087597f6da52ec6393a709e7108b2905317d0c0b744cdca6208e670d8eda"},
     {file = "flake8_polyfill-1.0.2-py2.py3-none-any.whl", hash = "sha256:12be6a34ee3ab795b19ca73505e7b55826d5f6ad7230d31b18e106400169b9e9"},
@@ -1115,10 +1075,6 @@ gitdb = [
 gitpython = [
     {file = "GitPython-3.1.24-py3-none-any.whl", hash = "sha256:dc0a7f2f697657acc8d7f89033e8b1ea94dd90356b2983bca89dc8d2ab3cc647"},
     {file = "GitPython-3.1.24.tar.gz", hash = "sha256:df83fdf5e684fef7c6ee2c02fc68a5ceb7e7e759d08b694088d0cacb4eba59e5"},
-]
-hypothesis = [
-    {file = "hypothesis-6.27.1-py3-none-any.whl", hash = "sha256:cf2a5f76a6dc703090824724965439d188b7e64c6b1a2cc1f141c371f2c25ddc"},
-    {file = "hypothesis-6.27.1.tar.gz", hash = "sha256:908b7357ec4ae884004acf1afdd86bc1994eac312f1cb787d32db1bebfc1bb15"},
 ]
 identify = [
     {file = "identify-2.4.0-py2.py3-none-any.whl", hash = "sha256:eba31ca80258de6bb51453084bff4a923187cd2193b9c13710f2516ab30732cc"},
@@ -1443,8 +1399,8 @@ wcwidth = [
     {file = "wcwidth-0.2.5.tar.gz", hash = "sha256:c4d647b99872929fdb7bdcaa4fbe7f01413ed3d98077df798530e5b04f116c83"},
 ]
 win32-setctime = [
-    {file = "win32_setctime-1.0.3-py3-none-any.whl", hash = "sha256:dc925662de0a6eb987f0b01f599c01a8236cb8c62831c22d9cada09ad958243e"},
-    {file = "win32_setctime-1.0.3.tar.gz", hash = "sha256:4e88556c32fdf47f64165a2180ba4552f8bb32c1103a2fafd05723a0bd42bd4b"},
+    {file = "win32_setctime-1.0.4-py3-none-any.whl", hash = "sha256:7964234073ad9bc7a689ef2ebe6ce931976b644fe73fd50cf7729c996b7d8385"},
+    {file = "win32_setctime-1.0.4.tar.gz", hash = "sha256:2b72b798fdc1d909fb3cc0d25e0be52a42f4848857e3588dd3947c6a18b42609"},
 ]
 zipp = [
     {file = "zipp-3.6.0-py3-none-any.whl", hash = "sha256:9fe5ea21568a0a70e50f273397638d39b03353731e6cbbb3fd8502a33fec40bc"},

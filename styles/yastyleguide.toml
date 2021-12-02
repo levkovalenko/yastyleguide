@@ -5,7 +5,13 @@
 count = true
 show-source = true
 statistics = true
-ignore = "D100,D104,W503"
+# We ignore next errors:
+# D100 - missing docstrings for modules
+# D104 - missing docstrings for packages
+# W503 - broken line befor binary operator
+# PD015 - no `pd.merge`, only df.merge
+# We belive that we don't need this errors for our linter.
+ignore = "D100,D104,W503,PD015"
 
 # Line settings
 max-line-length = 88
@@ -15,6 +21,9 @@ inline-quotes = '"'
 
 # Complexisty settings
 max-complexity = 5
+max-expression-complexity = 9
+max-annotations-complexity = 4
+max-line-complexity = 15
 
 # Docstrings conv
 docstring-convention = 'google'

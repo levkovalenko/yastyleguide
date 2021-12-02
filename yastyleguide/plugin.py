@@ -1,9 +1,11 @@
 import ast
+from typing import Dict, Union
 
 from flake8.options.manager import OptionManager
 
 from . import __version__
-from .checkers import LoopChecker
+from .checkers import LineComplexityChecker, LoopChecker, ModuleComplexityChecker
+from .options import Config
 from .types import ERROR_GENERATOR
 
 
@@ -12,7 +14,9 @@ class YASGPlugun:
 
     version = __version__
     name = "yastyleguide"
-    visitors = [LoopChecker]
+    visitors = [LoopChecker, LineComplexityChecker, ModuleComplexityChecker]
+    options: Dict[str, Union[str, int]]
+    config: Config = Config()
 
     def __init__(self, tree: ast.AST):
         """Init of flake8 plugin yastyleguide.
@@ -23,16 +27,25 @@ class YASGPlugun:
         self.tree = tree
 
     @classmethod
-    def add_options(cls, parser: OptionManager, use_config=True):
-        """Used by flake8 to add options."""
-        pass
+    def add_options(cls, manager: OptionManager):
+        """Used flake8 for add options.
+
+        Args:
+            manager (OptionManager): option manager.
+        """
+        cls.config.add_options(manager)
 
     @classmethod
-    def parse_options(cls, options, _extra=None):
-        """Used by flake8 to parse options."""
-        pass
+    def parse_options(cls, options):
+        """Used flake8 for parse options.
+
+        Args:
+            options (Options): flake9 options object.
+        """
+        cls.options = cls.config.parse_options(options)
 
     def run(self) -> ERROR_GENERATOR:
         """Run plugin."""
-        for visitor in self.visitors:
+        # I yield result of each visitor consistently.
+        for visitor in self.visitors:  # noqa: YASG101
             yield from visitor.from_plugin(self).errors()

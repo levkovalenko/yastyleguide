@@ -18,6 +18,11 @@ class BaseChecker:
         """
         self.visitor = self.base_visitor()
         self.visitor.visit(tree)
+        self._set_options(**kwargs)
+
+    def _set_options(self, **kwargs):
+        """Set checker options."""
+        ...
 
     def errors(self) -> ERROR_GENERATOR:
         """Rule for linter errors generator.
@@ -40,4 +45,4 @@ class BaseChecker:
         Returns:
             "BaseChecker": checker object
         """
-        return cls(plugin.tree)
+        return cls(plugin.tree, **plugin.options)
