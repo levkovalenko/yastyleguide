@@ -22,3 +22,4 @@ You can easily extend its capabilities with [plugins](https://github.com/DmytroL
 - [**flake8-expression-complexity**](https://github.com/best-doctor/flake8-expression-complexity) - checking expression complexity.
 - [**flake8-annotations-complexity**](https://github.com/best-doctor/flake8-annotations-complexity) - checking annotations complexity.
 - [**flake8-requirements**](https://github.com/Arkq/flake8-requirements) - checking requirements.
+- [**nitpick**](https://github.com/andreoliwa/nitpick) - tool for synchronize project settings.
