@@ -27,9 +27,9 @@ check-linters:
   script:
     - poetry install
     - echo "Checking with Flake8"
-    - poetry run flake8 .
+    - poetry run flake8 yastyleguide
     - echo "Checking with MyPy"
-    - poetry run mypy .
+    - poetry run mypy yastyleguide
 
 
 tests:
