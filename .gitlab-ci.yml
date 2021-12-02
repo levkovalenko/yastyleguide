@@ -1,5 +1,6 @@
 stages:
   - check
+  - test
   - build
 
 default:
@@ -32,7 +33,7 @@ check-linters:
 
 
 tests:
-  stage: check
+  stage: test
   rules:
     - if: $CI_COMMIT_BRANCH == 'master'
     - if: $CI_COMMIT_BRANCH =~ /ci$/
