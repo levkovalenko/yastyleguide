@@ -1,7 +1,7 @@
 import ast
 from typing import Dict, Union
 
-from flake8.options.manager import OptionManager
+from flake8.options.manager import OptionManager  # type: ignore
 
 from . import __version__
 from .checkers import LineComplexityChecker, LoopChecker, ModuleComplexityChecker
