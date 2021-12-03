@@ -1,6 +1,6 @@
 from typing import Any, Dict
 
-from flake8.options.manager import OptionManager
+from flake8.options.manager import OptionManager  # type: ignore
 
 
 class Config:
