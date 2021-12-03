@@ -17,15 +17,15 @@ class ModuleComplexityChecker(BaseChecker):
     max_function_defs: int
     max_class_defs: int
 
-    line_count_template: str = "YASG104 To many lines per module, {0} > {1}."
+    line_count_template: str = "YASG203 To many lines per module, {0} > {1}."
     module_complexity_template: str = (
-        "YASG105 To big median line complexity in module, {0} > {1}."
+        "YASG202 To big median line complexity in module, {0} > {1}."
     )
     function_defs_template: str = (
-        "YASG106 To many function definitions per module, {0} > {1}."
+        "YASG204 To many function definitions per module, {0} > {1}."
     )
     class_defs_template: str = (
-        "YASG106 To many class definitions per module, {0} > {1}."
+        "YASG205 To many class definitions per module, {0} > {1}."
     )
 
     def _set_options(

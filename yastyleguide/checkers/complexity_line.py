@@ -10,7 +10,7 @@ class LineComplexityChecker(BaseChecker):
     """Check loop statement into ast tree."""
 
     base_visitor = ComplexityVisitor
-    template = "YASG103 Line is to complex, {0} > {1}."
+    template = "YASG201 Line is to complex, {0} > {1}. To many ast nodes per line."
     max_line_complexity: int
 
     def _set_options(self, max_line_complexity: int = 8, **kwargs):
