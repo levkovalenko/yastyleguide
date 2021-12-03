@@ -17,16 +17,27 @@ unzip artifacts.zip
 pip install dist/yastyleguide-0.0.3.tar.gz
 ```
 
+From [git](it+https://gitlab.com/ds.team/general/yastyleguide):
+```bash
+poetry add git+https://gitlab.com/ds.team/general/yastyleguide
+```
+<details><summary>Публичный вариант</summary>
+
+```bash
+poetry add git+https://github.com/levkovalenko/yastyleguide
+```
+</details>
+
 ## Nitpick styleguide
 
 You can use base settings for linters with [nitpick](https://github.com/andreoliwa/nitpick):
-```bash
+```toml
 [tool.nitpick]
 style = "https://gitlab.com/ds.team/general/yastyleguide/-/blob/master/styles/nitpick-yastyle.toml"
 ```
 <details><summary>Публичный вариант</summary>
 
-```bash
+```toml
 [tool.nitpick]
 style = "https://raw.githubusercontent.com/levkovalenko/yastyleguide/master/styles/nitpick-yastyle.toml"
 ```
