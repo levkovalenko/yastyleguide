@@ -11,9 +11,10 @@ poetry build
 pip install dist/yastyleguide-0.0.3.tar.gz
 ```
 
-From dist release:
+From [dist](https://gitlab.com/ds.team/general/yastyleguide/-/jobs/1845796021/artifacts/download) release:
 ```bash
-Future comes
+unzip artifacts.zip
+pip install dist/yastyleguide-0.0.3.tar.gz
 ```
 
 ## Nitpick styleguide
