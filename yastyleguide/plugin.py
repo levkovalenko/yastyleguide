@@ -9,7 +9,7 @@ from .options import Config
 from .types import ERROR_GENERATOR
 
 
-class YASGPlugun:
+class YASGPlugin:
     """Checker for yastyleguide."""
 
     version = __version__

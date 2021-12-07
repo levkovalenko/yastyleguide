@@ -3,7 +3,35 @@ Yet another styleguide
 
 
 ## Install
-From source:
+#### From gitlab pypi repository:
+<details><summary>Create gitlab access token.</summary>
+
+Go to page [gitlab settings](https://gitlab.com/-/profile/personal_access_tokens).
+Create gitlab access token with scopes:
+- api
+- read-api
+- read_registry
+- write_registry
+
+</details>
+
+Set poetry http-basic authentication by token:
+```bash
+ poetry config http-basic.yastyleguide <gitlab-access-token-name> <gitlab-access-token>
+```
+Write to **pyproject.toml**:
+```toml
+[[tool.poetry.source]]
+name = "yastyleguide"
+url = "https://gitlab.com/api/v4/projects/31783240/packages/pypi/simple"
+secondary = true
+```
+Install by poetry:
+```bash
+poetry add yastyleguide -D --source=yastyleguide
+```
+
+#### From source:
 ```bash
 git clone https://gitlab.com/ds.team/general/yastyleguide
 cd yastyleguide 
@@ -11,13 +39,13 @@ poetry build
 pip install dist/yastyleguide-0.0.3.tar.gz
 ```
 
-From [dist](https://gitlab.com/ds.team/general/yastyleguide/-/jobs/1845796021/artifacts/download) release:
+#### From [dist](https://gitlab.com/ds.team/general/yastyleguide/-/jobs/1845796021/artifacts/download) release:
 ```bash
 unzip artifacts.zip
 pip install dist/yastyleguide-0.0.3.tar.gz
 ```
 
-From [git](it+https://gitlab.com/ds.team/general/yastyleguide):
+#### From [git](it+https://gitlab.com/ds.team/general/yastyleguide):
 ```bash
 poetry add git+https://gitlab.com/ds.team/general/yastyleguide
 ```
