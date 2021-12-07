@@ -34,8 +34,13 @@ classifiers = [
   "Topic :: Software Development :: Quality Assurance",
 ]
 
+[[tool.poetry.source]]
+name = "yastyleguide"
+url = "https://gitlab.com/api/v4/projects/31783240/packages/pypi/simple"
+secondary = true
+
 [tool.poetry.dependencies]
-python = "^3.8 || ^3.9"
+python = "^3.8"
 flake8 = "^4.0.1"
 flake8-bugbear = "^21.9.2"
 flake8-comprehensions = "^3.7.0"
@@ -62,4 +67,4 @@ nitpick = "^0.29.0"
 
 
 [tool.poetry.plugins."flake8.extension"]
-YASG = "yastyleguide.plugin:YASGPlugun"
+YASG = "yastyleguide.plugin:YASGPlugin"
