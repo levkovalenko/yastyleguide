@@ -10,8 +10,12 @@ statistics = true
 # D104 - missing docstrings for packages
 # W503 - broken line befor binary operator
 # PD015 - no `pd.merge`, only df.merge
+# S101 - assert for tests
+# D103 - docstrings for tests
+# F401 - import for init files
 # We belive that we don't need this errors for our linter.
 ignore = "D100,D104,W503,PD015"
+per-file-ignores = "tests/**.py:S101,D103,**__init__.py:F401,"
 
 # Line settings
 max-line-length = 88
@@ -27,3 +31,4 @@ max-line-complexity = 15
 
 # Docstrings conv
 docstring-convention = 'google'
+
