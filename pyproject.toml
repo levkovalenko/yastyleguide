@@ -7,7 +7,7 @@ style = "styles/nitpick-yastyle.toml"
 
 [tool.poetry]
 name = "yastyleguide"
-version = "0.0.4"
+version = "0.0.5"
 description = "Yet another styleguide."
 authors = ["levkovalenko <levozavr@mail.ru>"]
 license = "MIT"

@@ -10,6 +10,7 @@ class Config:
         "max_line_complexity": {
             "type": "int",
             "default": 15,
+            "parse_from_config": True,
             "help": (
                 "User defined max line complexity."
                 "Default max line complexity = 15"
@@ -19,6 +20,7 @@ class Config:
         "max_line_count": {
             "type": "int",
             "default": 200,
+            "parse_from_config": True,
             "help": (
                 "User defined max line number in module."
                 "Default max line number = 200."
@@ -28,6 +30,7 @@ class Config:
         "max_module_complexity": {
             "type": "int",
             "default": 10,
+            "parse_from_config": True,
             "help": (
                 "User defined max module complexity."
                 "Default max module complexity = 10."
@@ -37,6 +40,7 @@ class Config:
         "max_function_definitions": {
             "type": "int",
             "default": 8,
+            "parse_from_config": True,
             "help": (
                 "User defined max number of function definitions."
                 "Default max function definitions = 8."
@@ -46,6 +50,7 @@ class Config:
         "max_class_definitions": {
             "type": "int",
             "default": 3,
+            "parse_from_config": True,
             "help": (
                 "User defined max number of class definitions."
                 "Default max class definitions = 3."
