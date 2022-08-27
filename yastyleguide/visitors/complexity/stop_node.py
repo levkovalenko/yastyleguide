@@ -32,3 +32,17 @@ def negative_constant_node(node: ast.UnaryOp) -> bool:
     """
     sub_constant = name(node.op) == "USub" and name(node.operand) == "Constant"
     return sub_constant
+
+
+@stop_node.register
+def increment_node(node: ast.BinOp) -> bool:
+    """Stop on binary operation on constant equal 1. Cause it is increment.
+
+    Args:
+        node (ast.UnaryOp): binary operation.
+
+    Returns:
+        bool: is it increment or not.
+    """
+    increment = name(node.op) == "Add" and name(node.right) == "Constant" and node.right.value==1
+    return increment
