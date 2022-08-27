@@ -13,7 +13,6 @@ authors = ["levkovalenko <levozavr@mail.ru>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/levkovalenko/yastyleguide"
-
 keywords = [
   "flake8",
   "flake8-plugin",
@@ -33,11 +32,6 @@ classifiers = [
   "Topic :: Software Development :: Libraries :: Python Modules",
   "Topic :: Software Development :: Quality Assurance",
 ]
-
-[[tool.poetry.source]]
-name = "yastyleguide"
-url = "https://gitlab.com/api/v4/projects/31783240/packages/pypi/simple"
-secondary = true
 
 [tool.poetry.dependencies]
 python = "^3.8"
