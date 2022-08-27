@@ -18,7 +18,7 @@ def use_node(node) -> bool:
 
 
 @use_node.register
-def _(node: ast.Tuple) -> bool:
+def tuple_node(node: ast.Tuple) -> bool:
     """Skip ast.Tuple if it contains Constant, Slice or Variables.
 
     Args:
@@ -28,12 +28,12 @@ def _(node: ast.Tuple) -> bool:
         bool: does contains Constant, Slice or Variables.
     """
     simple_nodes = ["Constant", "Slice", "Name"]
-    slices = all(name(elt in simple_nodes) for elt in node.elts)
+    slices = all(name(elt) in simple_nodes for elt in node.elts)
     return not slices
 
 
 @use_node.register
-def _(node: ast.Name) -> bool:
+def builin_node(node: ast.Name) -> bool:
     """Skip builtin names list and dict.
 
     Args:
@@ -47,7 +47,7 @@ def _(node: ast.Name) -> bool:
 
 @use_node.register(ast.Subscript)
 @use_node.register(ast.Lambda)
-def _(_) -> bool:
+def simple_node(_) -> bool:
     """Skip simple nodes.
 
     We decide what Lambda and Subscript are simple Node so skip it in complexity count.

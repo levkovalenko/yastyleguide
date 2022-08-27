@@ -18,7 +18,7 @@ def stop_node(node) -> bool:
 
 
 @stop_node.register
-def _(node: ast.UnaryOp) -> bool:
+def negative_constant_node(node: ast.UnaryOp) -> bool:
     """Stop on unary operation on constant. Cause it is constant.
 
     Ex: -3 in ast is UnaryOp(op=USub, operand=Constant).
