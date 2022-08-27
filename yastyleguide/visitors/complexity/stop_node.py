@@ -44,5 +44,9 @@ def increment_node(node: ast.BinOp) -> bool:
     Returns:
         bool: is it increment or not.
     """
-    increment = name(node.op) == "Add" and name(node.right) == "Constant" and node.right.value==1
+    increment = (
+        name(node.op) == "Add"
+        and name(node.right) == "Constant"
+        and node.right.value == 1
+    )
     return increment
