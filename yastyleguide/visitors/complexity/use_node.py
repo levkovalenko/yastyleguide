@@ -42,7 +42,7 @@ def builin_node(node: ast.Name) -> bool:
     Returns:
         bool: is node list or dict.
     """
-    return node.id not in ["dict", "list"]
+    return node.id not in ["dict", "list", "map"]
 
 
 @use_node.register(ast.Subscript)
