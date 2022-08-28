@@ -53,6 +53,9 @@ build-release:
   script:
     - echo "Building to python package."
     - poetry build
+    - echo "Publish package to public pypi."
+    - poetry config pypi-token.pypi $PYPI_TOKEN_PYPI
+    - poetry publish
     - echo "Publish package to gitlab pypi."
     - poetry config repositories.gitlab "https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/packages/pypi"
     - poetry config http-basic.gitlab gitlab-ci-token "$CI_JOB_TOKEN"
