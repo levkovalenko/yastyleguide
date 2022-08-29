@@ -7,13 +7,12 @@ style = "styles/nitpick-yastyle.toml"
 
 [tool.poetry]
 name = "yastyleguide"
-version = "0.0.5a"
+version = "0.1.0"
 description = "Yet another styleguide."
 authors = ["levkovalenko <levozavr@mail.ru>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/levkovalenko/yastyleguide"
-
 keywords = [
   "flake8",
   "flake8-plugin",
@@ -33,11 +32,6 @@ classifiers = [
   "Topic :: Software Development :: Libraries :: Python Modules",
   "Topic :: Software Development :: Quality Assurance",
 ]
-
-[[tool.poetry.source]]
-name = "yastyleguide"
-url = "https://gitlab.com/api/v4/projects/31783240/packages/pypi/simple"
-secondary = true
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -66,3 +60,9 @@ mypy = "^0.910"
 
 [tool.poetry.plugins."flake8.extension"]
 YASG = "yastyleguide.plugin:YASGPlugin"
+
+
+[[tool.poetry.source]]
+name = "yastyleguide"
+url = "https://gitlab.com/api/v4/projects/31783240/packages/pypi/simple"
+secondary = true

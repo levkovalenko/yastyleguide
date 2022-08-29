@@ -2,6 +2,10 @@ import ast
 from collections import defaultdict
 from typing import Dict
 
+from .node_name import name
+from .stop_node import stop_node
+from .use_node import use_node
+
 
 class ComplexityVisitor(ast.NodeVisitor):
     """Complexity visitor.
@@ -30,10 +34,14 @@ class ComplexityVisitor(ast.NodeVisitor):
             node (ast.AST): ast node.
         """
         lineno = getattr(node, "lineno", None)
-        if lineno:
+        node_type = name(node)
+
+        if lineno and use_node(node):
             self.line_score[lineno] += 1
 
-        node_type = node.__class__.__name__
+        if stop_node(node):
+            return
+
         if node_type in self.DEFINITIONS:
             self.unit_count[self.DEFINITIONS[node_type]] += 1
 
