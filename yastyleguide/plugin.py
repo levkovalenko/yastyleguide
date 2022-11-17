@@ -9,7 +9,7 @@ from .options import Config
 from .types import ERROR_GENERATOR
 
 
-class YASGPlugin:
+class YASPlugin:
     """Checker for yastyleguide."""
 
     version = __version__
@@ -47,5 +47,5 @@ class YASGPlugin:
     def run(self) -> ERROR_GENERATOR:
         """Run plugin."""
         # I yield result of each visitor consistently.
-        for visitor in self.visitors:  # noqa: YASG101
+        for visitor in self.visitors:  # noqa: YAS101
             yield from visitor.from_plugin(self).errors()
