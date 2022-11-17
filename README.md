@@ -37,12 +37,12 @@ flake8 .
 Our own codes:
 |Code|Description|
 |----|-----------|
-|YASG101|`Don't use any 'for' loops.`|
-|YASG102|`Don't use any 'while' loops.`|
-|YASG201|`Line is to complex, {0} > {1}. To many ast nodes per line.`|
-|YASG202|`To big median line complexity in module, {0} > {1}.`|
-|YASG203|`To many lines per module, {0} > {1}.`|
-|YASG204|`To many function definitions per module, {0} > {1}.`|
-|YASG205|`To many class definitions per module, {0} > {1}.`|
+|YAS101|`Don't use any 'for' loops.`|
+|YAS102|`Don't use any 'while' loops.`|
+|YAS201|`Line is to complex, {0} > {1}. To many ast nodes per line.`|
+|YAS202|`To big median line complexity in module, {0} > {1}.`|
+|YAS203|`To many lines per module, {0} > {1}.`|
+|YAS204|`To many function definitions per module, {0} > {1}.`|
+|YAS205|`To many class definitions per module, {0} > {1}.`|
 
 You can read about external plugins violations at [/docs/eng/plugin_list.md](docs/eng/plugin_list.md)

@@ -64,7 +64,7 @@ def test_visitor(  # noqa: D103
 
     assert len(visitor.line_score) == len(complexity)
 
-    for lineno, score in visitor.line_score.items():  # noqa: YASG101
+    for lineno, score in visitor.line_score.items():  # noqa: YAS101
         assert lineno in complexity
         assert score == complexity[lineno]
 

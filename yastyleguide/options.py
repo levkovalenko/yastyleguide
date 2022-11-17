@@ -66,7 +66,7 @@ class Config:
             manager (OptionManager): manager for adding options.
         """
         # I consistently add options for manager, so i use for loop.
-        for name, params in self.options.items():  # noqa: YASG101
+        for name, params in self.options.items():  # noqa: YAS101
             option_name = f"--{name.replace('_', '-')}"
             manager.add_option(option_name, **params)
 

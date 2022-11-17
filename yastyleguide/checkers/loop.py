@@ -9,8 +9,8 @@ class LoopChecker(BaseChecker):
 
     base_visitor = LoopVisitor
     checks = {
-        "For": "YASG101 Don't use any 'for' loops.",
-        "While": "YASG102 Don't use any 'while' loops.",
+        "For": "YAS101 Don't use any 'for' loops.",
+        "While": "YAS102 Don't use any 'while' loops.",
     }
 
     def errors(self) -> ERROR_GENERATOR:

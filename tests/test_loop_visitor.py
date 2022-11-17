@@ -52,5 +52,5 @@ def test_visitor(snippet: str, expected: List[Tuple[str, int, int]]):  # noqa: D
     ast_tree = ast.parse(snippet)
     visitor.visit(ast_tree)
 
-    for res, exp in zip_longest(visitor.loops, expected):  # noqa: YASG101
+    for res, exp in zip_longest(visitor.loops, expected):  # noqa: YAS101
         assert res == LoopVisitor.Loop(*exp)

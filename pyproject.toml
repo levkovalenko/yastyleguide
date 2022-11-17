@@ -58,7 +58,7 @@ mypy = "^0.910"
 
 
 [tool.poetry.plugins."flake8.extension"]
-YASG = "yastyleguide.plugin:YASGPlugin"
+YAS = "yastyleguide.plugin:YASPlugin"
 
 
 [[tool.poetry.source]]
