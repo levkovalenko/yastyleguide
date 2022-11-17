@@ -6,10 +6,7 @@ stages:
 default:
   image: python:3.9
   before_script:
-    - if [ ! -e .poetry/bin/poetry ] ; then
-    -   curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | HOME=$PWD python -
-    - fi
-    - export PATH=$PWD/.poetry/bin:$PATH
+    - pip install poetry==1.2.2
     - poetry config --local cache-dir $PWD/.poetry/cache
     - poetry config --local virtualenvs.in-project true
   cache:
