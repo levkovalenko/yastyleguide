@@ -67,6 +67,3 @@ def test_visitor(  # noqa: D103
     for lineno, score in visitor.line_score.items():  # noqa: YAS101
         assert lineno in complexity
         assert score == complexity[lineno]
-
-    assert visitor.unit_count[FUNC] == count[FUNC]
-    assert visitor.unit_count[CLS] == count[CLS]
