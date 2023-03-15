@@ -21,7 +21,7 @@ license = "MIT"
 name = "yastyleguide"
 readme = "README.md"
 repository = "https://github.com/levkovalenko/yastyleguide"
-version = "0.2.0a"
+version = "0.2.0"
 
 classifiers = [
   "Development Status :: 4 - Beta",
