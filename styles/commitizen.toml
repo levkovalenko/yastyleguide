@@ -1,0 +1,39 @@
+# Nitpick settings for commitizen
+
+["pyproject.toml".tool.commitizen]
+name = "cz_customize"
+
+["pyproject.toml".tool.commitizen.customize]
+message_template = "{{change_type}}[{{issue_number}}]:{% if show_message %} {{message}}{% endif %}"
+example = "docs[90]: add new docs."
+schema = "<type>[<issue_number>]: <body>"
+schema_pattern = "(fix|wip|docs|sub|ref)(\\[\\d+\\])?:(\\s.*)"
+change_type_order = ["wip", "fix", "docs", "sub", "ref"]
+commit_parser = "^(?P<change_type>fix|wip|docs|sub|ref)\\(\\[?P<issue_number>\\]\\):\\s(?P<message>.*)?"
+
+[["pyproject.toml".tool.commitizen.customize.questions]]
+type = "list"
+name = "change_type"
+choices = [
+    {value = "wip", name = "wip: Work in progress."},
+    {value = "fix", name = "fix: Fix something wrong."},
+    {value = "docs", name = "docs: Change documentation."},
+    {value = "sub", name = "sub: Some subsidary work."},
+    {value = "ref", name = "ref: Refactoring."}
+]
+message = "Select the type of change you are committing:"
+
+[["pyproject.toml".tool.commitizen.customize.questions]]
+type = "input"
+name = "issue_number"
+message = "Issue nember:"
+
+[["pyproject.toml".tool.commitizen.customize.questions]]
+type = "input"
+name = "message"
+message = "Body:"
+
+[["pyproject.toml".tool.commitizen.customize.questions]]
+type = "confirm"
+name = "show_message"
+message = "Do you want to add body message in commit?"

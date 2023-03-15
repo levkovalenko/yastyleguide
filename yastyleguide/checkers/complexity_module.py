@@ -1,5 +1,4 @@
 from statistics import median
-from typing import Dict, List, Tuple
 
 from yastyleguide.types import ERROR, ERROR_GENERATOR
 from yastyleguide.visitors import ComplexityVisitor
@@ -33,7 +32,7 @@ class ModuleComplexityChecker(BaseChecker):
         max_function_definitions: int = 8,
         max_class_definitions: int = 3,
         **kwargs,
-    ):
+    ) -> None:
         """Set checker options.
 
         Args:
@@ -62,19 +61,19 @@ class ModuleComplexityChecker(BaseChecker):
             ERROR_GENERATOR: errors in flake format.
         """
         # We use one implementation of NodeVisitor
-        line_score: Dict[int, int] = self.visitor.line_score  # type: ignore
-        unit_count: Dict[str, int] = self.visitor.unit_count  # type: ignore
+        line_score: dict[int, int] = self.visitor.line_score  # type: ignore
+        unit_count: dict[str, int] = self.visitor.unit_count  # type: ignore
 
         line_count = len(line_score)
 
         if line_count == 0:
             return
 
-        module_score = int(median(line_score.values()))  # noqa: PD011
+        module_score = int(median(line_score.values()))
         function_definitions = unit_count["function"]
         class_definitions = unit_count["class"]
 
-        checks: List[Tuple[int, int, str]] = [
+        checks: list[tuple[int, int, str]] = [
             (line_count, self.max_line_count, self.line_count_template),
             (module_score, self.max_module_complexity, self.module_complexity_template),
             (function_definitions, self.max_function_defs, self.function_defs_template),

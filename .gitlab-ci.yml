@@ -6,7 +6,7 @@ stages:
 default:
   image: python:3.9
   before_script:
-    - pip install poetry==1.2.2
+    - pip install poetry==1.4.0
     - poetry config --local cache-dir $PWD/.poetry/cache
     - poetry config --local virtualenvs.in-project true
   cache:

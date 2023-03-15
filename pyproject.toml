@@ -1,18 +1,13 @@
 [build-system]
-requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
 
 [tool.nitpick]
 style = "styles/nitpick-yastyle.toml"
 
 [tool.poetry]
-name = "yastyleguide"
-version = "0.1.1"
-description = "Yet another styleguide."
 authors = ["levkovalenko <levozavr@mail.ru>"]
-license = "MIT"
-readme = "README.md"
-repository = "https://github.com/levkovalenko/yastyleguide"
+description = "Yet another styleguide."
 keywords = [
   "flake8",
   "flake8-plugin",
@@ -20,8 +15,13 @@ keywords = [
   "yastyleguide",
   "styleguide",
   "code quality",
-  "pycqa"
+  "pycqa",
 ]
+license = "MIT"
+name = "yastyleguide"
+readme = "README.md"
+repository = "https://github.com/levkovalenko/yastyleguide"
+version = "0.2.0a"
 
 classifiers = [
   "Development Status :: 4 - Beta",
@@ -34,34 +34,132 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-flake8 = "^5.0.4"
-flake8-bugbear = "^22.4.25"
-flake8-comprehensions = "^3.9.0"
-flake8-docstrings = "^1.6.0"
-flake8-eradicate = "^1.2.1"
-pep8-naming = "^0.12.1"
-flake8-string-format = "^0.3.0"
-flake8-builtins = "^1.5.3"
-pandas-vet = "^0.2.3"
-flake8-black = "^0.3.3"
-flake8-expression-complexity = "^0.0.11"
+black = "^23.1.0"
+flake8 = "^6.0.0"
+flake8-annotations = "^3.0.0"
 flake8-annotations-complexity = "^0.0.7"
-flake8-requirements = "^1.5.3"
+flake8-async = "^22.11.14"
+flake8-black = "^0.3.6"
+flake8-builtins = "^2.1.0"
+flake8-cognitive-complexity = "^0.1.0"
+flake8-comprehensions = "^3.10.1"
+flake8-docstrings = "^1.7.0"
+flake8-expression-complexity = "^0.0.11"
+flake8-functions = "^0.0.7"
+flake8-isort = "^6.0.0"
+flake8-noqa = "^1.3.1"
+flake8-print = "^5.0.0"
+flake8-pyproject = "^1.2.2"
+flake8-requirements = "^1.7.7"
+flake8-spellcheck = "^0.28.0"
+flake8-string-format = "^0.3.0"
+flake8-nitpick = "^0.13.2"
+flake8-pep585 = "^0.1.7"
+isort = "^5.12.0"
 nitpick = "^0.32.0"
-black = "^22.3.0"
-flake8-isort = "^4.2.0"
+pep8-naming = "^0.13.3"
+python = "^3.9"
+requests-cache = "0.9.8"
+pre-commit = "^3.1.1"
 
-[tool.poetry.dev-dependencies]
-pytest = "^5.2"
-mypy = "^0.910"
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.2"
+jupyter = "^1.0.0"
+mypy = ">=1.1.1"
+commitizen = "^2.42.1"
 
 [tool.poetry.plugins."flake8.extension"]
 YAS = "yastyleguide.plugin:YASPlugin"
 
-
 [[tool.poetry.source]]
 name = "yastyleguide"
-url = "https://gitlab.com/api/v4/projects/31783240/packages/pypi/simple"
 secondary = true
+url = "https://gitlab.com/api/v4/projects/31783240/packages/pypi/simple"
+
+[tool.flake8]
+count = true
+dictionaries = ["en_US", "python", "technical", "pandas"]
+docstring-convention = "google"
+exclude = [
+  ".git",
+  "__pycache__",
+  ".cache",
+  ".mypy_cache",
+  "dist",
+  ".venv",
+  "tests",
+]
+inline-quotes = "\""
+max-line-count = 200
+max-line-length = 88
+per-file-ignores = ["tests/**.py:S101,D103", "**__init__.py:F401"]
+show-source = true
+statistics = true
+ignore = ["D100", "D104", "W503", "ANN002", "ANN003", "ANN101", "ANN102", "ANN204"]
+max-annotations-complexity = 4
+max-complexity = 3
+max-expression-complexity = 9
+max-line-complexity = 15
+
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+max-line-length = 88
+
+[tool.mypy]
+exclude = ["tests", ".venv"]
+check_untyped_defs = true
+
+[tool.commitizen]
+name = "cz_customize"
+
+[tool.commitizen.customize]
+message_template = "{{change_type}}[{{issue_number}}]:{% if show_message %} {{message}}{% endif %}"
+example = "docs[90]: add new docs."
+schema = "<type>[<issue_number>]: <body>"
+schema_pattern = "(fix|wip|docs|sub|ref)(\\[\\d+\\])?:(\\s.*)"
+change_type_order = ["wip", "fix", "docs", "sub", "ref"]
+commit_parser = "^(?P<change_type>fix|wip|docs|sub|ref)\\(\\[?P<issue_number>\\]\\):\\s(?P<message>.*)?"
+
+[[tool.commitizen.customize.questions]]
+type = "list"
+name = "change_type"
+message = "Select the type of change you are committing:"
+
+[[tool.commitizen.customize.questions.choices]]
+value = "wip"
+name = "wip: Work in progress."
+
+[[tool.commitizen.customize.questions.choices]]
+value = "fix"
+name = "fix: Fix something wrong."
+
+[[tool.commitizen.customize.questions.choices]]
+value = "docs"
+name = "docs: Change documentation."
+
+[[tool.commitizen.customize.questions.choices]]
+value = "sub"
+name = "sub: Some subsidary work."
+
+[[tool.commitizen.customize.questions.choices]]
+value = "ref"
+name = "ref: Refactoring."
+
+[[tool.commitizen.customize.questions]]
+type = "input"
+name = "issue_number"
+message = "Issue nember:"
+
+[[tool.commitizen.customize.questions]]
+type = "input"
+name = "message"
+message = "Body:"
+
+[[tool.commitizen.customize.questions]]
+type = "confirm"
+name = "show_message"
+message = "Do you want to add body message in commit?"

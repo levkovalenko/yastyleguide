@@ -6,14 +6,11 @@ minimum_version = "0.22.0"
 
 [nitpick.styles]
 include = [
-    "flake8.toml",
-    "yastyleguide.toml",
-    "isort.toml",
-]
-
-[nitpick.files."setup.cfg"]
-comma_separated_values = [
-    "flake8.ignore",
-    "flake8.exclude",
-    "flake8.per-file-ignores",
+  "flake8.toml",
+  "yastyleguide.toml",
+  "isort.toml",
+  "black.toml",
+  "mypy.toml",
+  "pre-commit.toml",
+  "commitizen.toml",
 ]

@@ -1,6 +1,5 @@
 import ast
 from collections import namedtuple
-from typing import List
 
 
 class LoopVisitor(ast.NodeVisitor):
@@ -14,9 +13,9 @@ class LoopVisitor(ast.NodeVisitor):
 
     def __init__(self):
         """Create for statement visitor."""
-        self.loops: List[LoopVisitor.Loop] = []
+        self.loops: list[LoopVisitor.Loop] = []
 
-    def visit_For(self, node: ast.AST):  # noqa: N802
+    def visit_For(self, node: ast.AST) -> None:  # noqa: N802
         """Visit For loop statement.
 
         Name is not in convention because `ast.NodeVisitor` use
@@ -29,7 +28,7 @@ class LoopVisitor(ast.NodeVisitor):
         self.loops.append(LoopVisitor.Loop("For", node.lineno, node.col_offset))
         self.generic_visit(node)
 
-    def visit_While(self, node: ast.AST):  # noqa: N802
+    def visit_While(self, node: ast.AST) -> None:  # noqa: N802
         """Visit While loop statement.
 
         Name is not in convention because `ast.NodeVisitor` use

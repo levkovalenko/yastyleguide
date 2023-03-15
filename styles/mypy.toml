@@ -1,0 +1,8 @@
+# Nitpick settings for mypy
+
+["pyproject.toml".tool.poetry.group.dev.dependencies]
+mypy = ">=1.1.1"
+
+["pyproject.toml".tool.mypy]
+exclude = ["tests", ".venv"]
+check_untyped_defs = true
