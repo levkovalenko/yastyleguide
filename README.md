@@ -40,6 +40,8 @@ Our own codes:
 |YAS101|`Don't use any 'for' loops.`|
 |YAS102|`Don't use any 'while' loops.`|
 |YAS201|`Line is to complex, {0} > {1}. To many ast nodes per line.`|
+
+*temporary disabled*
 |YAS202|`To big median line complexity in module, {0} > {1}.`|
 |YAS203|`To many lines per module, {0} > {1}.`|
 |YAS204|`To many function definitions per module, {0} > {1}.`|

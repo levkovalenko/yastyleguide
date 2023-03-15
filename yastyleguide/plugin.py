@@ -5,7 +5,7 @@ from typing import Union
 from flake8.options.manager import OptionManager  # type: ignore
 
 from . import __version__
-from .checkers import LineComplexityChecker, LoopChecker, ModuleComplexityChecker
+from .checkers import LineComplexityChecker, LoopChecker
 from .options import Config
 from .types import ERROR_GENERATOR
 
@@ -15,7 +15,7 @@ class YASPlugin:
 
     version = __version__
     name = "yastyleguide"
-    visitors = [LoopChecker, LineComplexityChecker, ModuleComplexityChecker]
+    visitors = [LoopChecker, LineComplexityChecker]
     options: dict[str, Union[str, int]]
     config: Config = Config()
 
