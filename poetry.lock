@@ -892,28 +892,6 @@ isort = ">=5.0.0,<6"
 test = ["pytest"]
 
 [[package]]
-name = "flake8-nitpick"
-version = "0.13.2"
-description = "Flake8 plugin to enforce the same lint configuration (flake8, isort, mypy, pylint) across multiple Python projects"
-category = "main"
-optional = false
-python-versions = ">=3.5,<4.0"
-files = [
-    {file = "flake8-nitpick-0.13.2.tar.gz", hash = "sha256:17859383936407f8c850e2548c8e4b40f8109c78850476d5b3c2ffcfdee5706e"},
-    {file = "flake8_nitpick-0.13.2-py3-none-any.whl", hash = "sha256:fc872840b50b0c5be2a5a483fd0e0592a814ff2574e0cd4a7510aa0b634f0ac6"},
-]
-
-[package.dependencies]
-attrs = "*"
-dictdiffer = "*"
-flake8 = ">=3.0.0"
-jmespath = "*"
-python-slugify = "*"
-pyyaml = "*"
-requests = "*"
-toml = "*"
-
-[[package]]
 name = "flake8-noqa"
 version = "1.3.1"
 description = "Flake8 noqa comment validation"
@@ -3309,4 +3287,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "4ef101a00198cddd4a6e6519b828d2e6fd6c1e68039cd21fbad0c2a5945603ec"
+content-hash = "9a3eea6554c27a2737e99024fc0ee2253e80b0415a84a0afbe012399b211e650"
