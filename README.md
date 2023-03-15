@@ -17,15 +17,8 @@ pip install yastyleguide
 You can use base settings for linters with [nitpick](https://github.com/andreoliwa/nitpick):
 ```toml
 [tool.nitpick]
-style = "https://gitlab.com/ds.team/general/yastyleguide/-/blob/master/styles/nitpick-yastyle.toml"
+style = "https://raw.githubusercontent.com/levkovalenko/yastyleguide-styles/master/nitpick-yastyle.toml"
 ```
-<details><summary>Публичный вариант</summary>
-
-```toml
-[tool.nitpick]
-style = "https://raw.githubusercontent.com/levkovalenko/yastyleguide/master/styles/nitpick-yastyle.toml"
-```
-</details>
 
 ## Running
 It's just plugin **flake8**, so:
