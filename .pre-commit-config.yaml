@@ -30,7 +30,7 @@ repos:
     rev: 6.0.0
     hooks:
       - additional_dependencies:
-          - yastyleguide==0.2.0a
+          - yastyleguide==0.2.0
         id: flake8
         stages:
           - commit
@@ -44,5 +44,5 @@ repos:
     rev: v0.32.0
     hooks:
       - additional_dependencies:
-        - requests-cache==0.9.8
+          - requests-cache==0.9.8
         id: nitpick

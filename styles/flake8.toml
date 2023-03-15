@@ -1,3 +1,0 @@
-# Nitpick settings for flake8
-
-["pyproject.toml".tool.flake8]

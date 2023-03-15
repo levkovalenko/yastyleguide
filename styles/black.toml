@@ -1,4 +1,0 @@
-# Nitpick settings for black
-
-["pyproject.toml".tool.black]
-max-line-length = 88
