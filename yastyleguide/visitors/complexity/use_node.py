@@ -1,15 +1,16 @@
 import ast
 from functools import singledispatch
+from typing import Union
 
 from .node_name import name
 
 
 @singledispatch
-def use_node(node) -> bool:
+def use_node(node: ast.AST) -> bool:
     """Decide to use node. False if skip it.
 
     Args:
-        node (ast.Node): ast node.
+        node (ast.AST): ast node.
 
     Returns:
         bool: default True.
@@ -33,7 +34,7 @@ def tuple_node(node: ast.Tuple) -> bool:
 
 
 @use_node.register
-def builin_node(node: ast.Name) -> bool:
+def builtin_node(node: ast.Name) -> bool:
     """Skip builtin names list and dict.
 
     Args:
@@ -47,13 +48,13 @@ def builin_node(node: ast.Name) -> bool:
 
 @use_node.register(ast.Subscript)
 @use_node.register(ast.Lambda)
-def simple_node(_) -> bool:
+def simple_node(_: Union[ast.Subscript, ast.Lambda]) -> bool:
     """Skip simple nodes.
 
     We decide what Lambda and Subscript are simple Node so skip it in complexity count.
 
     Args:
-        _ (ast.Node): ast node.
+        _ (ast.Subscript | ast.Lambda): ast node.
 
     Returns:
         bool: default False.

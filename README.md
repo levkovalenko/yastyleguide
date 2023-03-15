@@ -17,15 +17,8 @@ pip install yastyleguide
 You can use base settings for linters with [nitpick](https://github.com/andreoliwa/nitpick):
 ```toml
 [tool.nitpick]
-style = "https://gitlab.com/ds.team/general/yastyleguide/-/blob/master/styles/nitpick-yastyle.toml"
+style = "https://raw.githubusercontent.com/levkovalenko/yastyleguide-styles/master/nitpick-yastyle.toml"
 ```
-<details><summary>Публичный вариант</summary>
-
-```toml
-[tool.nitpick]
-style = "https://raw.githubusercontent.com/levkovalenko/yastyleguide/master/styles/nitpick-yastyle.toml"
-```
-</details>
 
 ## Running
 It's just plugin **flake8**, so:
@@ -40,6 +33,8 @@ Our own codes:
 |YAS101|`Don't use any 'for' loops.`|
 |YAS102|`Don't use any 'while' loops.`|
 |YAS201|`Line is to complex, {0} > {1}. To many ast nodes per line.`|
+
+*temporary disabled*
 |YAS202|`To big median line complexity in module, {0} > {1}.`|
 |YAS203|`To many lines per module, {0} > {1}.`|
 |YAS204|`To many function definitions per module, {0} > {1}.`|

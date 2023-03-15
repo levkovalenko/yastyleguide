@@ -1,10 +1,11 @@
 import ast
-from typing import Dict, Union
+from argparse import Namespace
+from typing import Union
 
 from flake8.options.manager import OptionManager  # type: ignore
 
 from . import __version__
-from .checkers import LineComplexityChecker, LoopChecker, ModuleComplexityChecker
+from .checkers import LineComplexityChecker, LoopChecker
 from .options import Config
 from .types import ERROR_GENERATOR
 
@@ -14,8 +15,8 @@ class YASPlugin:
 
     version = __version__
     name = "yastyleguide"
-    visitors = [LoopChecker, LineComplexityChecker, ModuleComplexityChecker]
-    options: Dict[str, Union[str, int]]
+    visitors = [LoopChecker, LineComplexityChecker]
+    options: dict[str, Union[str, int]]
     config: Config = Config()
 
     def __init__(self, tree: ast.AST):
@@ -27,7 +28,7 @@ class YASPlugin:
         self.tree = tree
 
     @classmethod
-    def add_options(cls, manager: OptionManager):
+    def add_options(cls, manager: OptionManager) -> None:
         """Used flake8 for add options.
 
         Args:
@@ -36,11 +37,11 @@ class YASPlugin:
         cls.config.add_options(manager)
 
     @classmethod
-    def parse_options(cls, options):
+    def parse_options(cls, options: Namespace) -> None:
         """Used flake8 for parse options.
 
         Args:
-            options (Options): flake9 options object.
+            options (Namespace): flake8 options object.
         """
         cls.options = cls.config.parse_options(options)
 

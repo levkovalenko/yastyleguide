@@ -1,4 +1,5 @@
-from typing import Any, Dict
+from argparse import Namespace
+from typing import Any
 
 from flake8.options.manager import OptionManager  # type: ignore
 
@@ -8,7 +9,7 @@ class Config:
 
     options = {
         "max_line_complexity": {
-            "type": "int",
+            "type": int,
             "default": 15,
             "parse_from_config": True,
             "help": (
@@ -18,7 +19,7 @@ class Config:
             ),
         },
         "max_line_count": {
-            "type": "int",
+            "type": int,
             "default": 200,
             "parse_from_config": True,
             "help": (
@@ -28,7 +29,7 @@ class Config:
             ),
         },
         "max_module_complexity": {
-            "type": "int",
+            "type": int,
             "default": 10,
             "parse_from_config": True,
             "help": (
@@ -38,7 +39,7 @@ class Config:
             ),
         },
         "max_function_definitions": {
-            "type": "int",
+            "type": int,
             "default": 8,
             "parse_from_config": True,
             "help": (
@@ -48,7 +49,7 @@ class Config:
             ),
         },
         "max_class_definitions": {
-            "type": "int",
+            "type": int,
             "default": 3,
             "parse_from_config": True,
             "help": (
@@ -59,7 +60,7 @@ class Config:
         },
     }
 
-    def add_options(self, manager: OptionManager):
+    def add_options(self, manager: OptionManager) -> None:
         """Add options to manager from config.
 
         Args:
@@ -70,7 +71,7 @@ class Config:
             option_name = f"--{name.replace('_', '-')}"
             manager.add_option(option_name, **params)
 
-    def parse_options(self, options) -> Dict[str, Any]:
+    def parse_options(self, options: Namespace) -> dict[str, Any]:
         """Parse options from flake.
 
         Args:
